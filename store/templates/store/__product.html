@@ -1,0 +1,163 @@
+
+            <div class="product-item">
+              <div class="product-thumb">
+                <a 
+                  ><img
+                    style="height: 10rem; min-height: 10rem; min-width: 5rem"
+                    src="{{product.imageURL}}"
+                    alt="product"
+                /></a>
+                {% if product.old_price is not null %}
+
+                <span class="batch sale">Sale</span>
+                {% endif %}
+                {% if product in customer.wish_list.all %}
+                <a  data-product="{{product.id}}" class=" mywishlist wish-link focus" href=""  >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="heart"
+                    class="svg-inline--fa fa-heart fa-w-16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                    ></path>
+                  </svg>
+                </a>
+                {% else %}
+                <a  data-product="{{product.id}}" class=" mywishlist wish-link " href=""  >
+                  <svg  
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="heart"
+                    class="svg-inline--fa fa-heart fa-w-16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                    ></path>
+                  </svg>
+                </a>
+                {% endif %}
+              </div>
+              <div class="product-content">
+                <a href="{% url 'brand' brand=product.brand %}" class="cata">{{product.brand}}</a>
+                <h6>
+                  <a href="product-detail.html" class="product-title"
+                    >{{product.name}}</a
+                  >
+                </h6>
+                <p class="quantity">{{product.size}} حبة</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="price">
+                    {{product.price|floatformat:2}} 
+                    {% if product.old_price is not null %}
+                    <del>$100.00</del>
+                    {% endif %}
+                  </div>
+
+                  {% if product.quantity %}
+
+                  <div class="price-increase-decrese-group d-flex">
+                    <span class="decrease-btn">
+                      <button
+                        type="button"
+                        data-product="{{product.id}}"
+                        data-action="remove"
+                        class="btn quantity-left-minus update-cart"
+                        data-type="minus"
+                        data-field=""
+                        data-image_url="{{product.imageURL}}"
+                        data-price="{{product.price}}"
+                        data-name="{{product.name}}"
+                      >
+                        -
+                      </button>
+                    </span>
+                    <input
+                      type="text"
+                      name="quantity"
+                      class="form-controls input-number"
+                      value="{{product.quantity}}"
+                    />
+                    <span class="increase">
+                      <button
+                        type="button"
+                        class="btn quantity-right-plus update-cart"
+                        data-type="plus"
+                        data-product="{{product.id}}"
+                        data-image_url="{{product.imageURL}}"
+                        data-price="{{product.price}}"
+                        data-action="add"
+                        data-field=""
+                        data-name="{{product.name}}"
+                      >
+                        +
+                      </button>
+                    </span>
+                  </div>
+
+                  {% else %}
+
+                  <div class="cart-btn-toggle">
+                    <span
+                      data-product="{{product.id}}"
+                      data-action="add"
+                      data-image_url="{{product.imageURL}}"
+                      data-price="{{product.price}}"
+                      data-name="{{product.name}}"
+                      class="cart-btn update-cart"
+                      ><i class="fas fa-shopping-cart"></i> اضف</span
+                    >
+
+                    <div class="price-btn">
+                      <div class="price-increase-decrese-group d-flex">
+                        <span class="decrease-btn">
+                          <button
+                            data-product="{{product.id}}"
+                            data-action="remove"
+                            type="button"
+                            class="btn quantity-left-minus update-cart"
+                            data-type="minus"
+                            data-field=""
+                            data-image_url="{{product.imageURL}}"
+                            data-price="{{product.price}}"
+                            data-name="{{product.name}}"
+                          >
+                            -
+                          </button>
+                        </span>
+                        <input
+                          type="text"
+                          name="quantity"
+                          class="form-controls input-number"
+                          value="1"
+                        />
+                        <span class="increase">
+                          <button
+                            data-product="{{product.id}}"
+                            data-action="add"
+                            type="button"
+                            class="btn quantity-right-plus update-cart"
+                            data-type="plus"
+                            data-field=""
+                            data-image_url="{{product.imageURL}}"
+                            data-price="{{product.price}}"
+                            data-name="{{product.name}}"
+                          >
+                            +
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endif %}
+                </div>
+              </div>
+            </div>

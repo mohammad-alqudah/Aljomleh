@@ -1,0 +1,22 @@
+<div class="col-12 pt--30 " >
+    <ul class="pagination justify-content-center justify-content-lg-start">
+      {% if products.has_previous %}
+      <li><a data-page="{{products.previous_page_number}}" class="page__number d-flex" href="?page={{products.previous_page_number}}"><i class="icon fas fa-angle-right"></i><span class="text">السابق</span></a></li>
+      {% else %}
+      <li><a class="page__number d-flex" href=""></a></li>
+      {% endif %}
+
+      {% for page in custom_range %}
+      {% if page == products.number %}
+      <li data-page="{{page}}  class="page__number d-none d-md-block"><a class="active" href="?page={{page}}">{{page}}</a></li>
+      {% else %}
+      <li data-page="{{page}} class="page__number d-none d-md-block"><a href="?page={{page}}">{{page}}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% if products.has_next %}
+      <li><a data-page="{{products.next_page_number}}" class="page__number d-flex" href="?page={{products.next_page_number}}"> <span class="text">التالي</span><i class="icon fas fa-angle-left"></i></a></li>
+      {% else %}
+      <li><a  class="page__number d-flex" href=""> </a></li>
+      {% endif %}
+    </ul>
+  </div>

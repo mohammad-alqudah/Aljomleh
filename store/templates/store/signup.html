@@ -1,0 +1,61 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+
+
+            <section class="login-section section-ptb">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="eflux-login-form-area">
+                                <form action="{% url 'signup' %}" method="POST" class="eflux-login-form">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="input-item">
+                                                <label>الإسم الاول</label>
+                                                <input type="text" name="first_name" placeholder="الإسم الاول"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="input-item">
+                                                <label>إسم العائلة</label>
+                                                <input type="text" name="last_name" placeholder="إسم العائلة "/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="input-item">
+                                                <label>رقم الهاتف</label>
+                                                <input type="phone" name="phone" placeholder="رقم الهاتف"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="input-item">
+                                                <label>Password</label>
+                                                <input type="password" name="password" placeholder="Password"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" class="submit">إنشاء حساب </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {% endblock content %}

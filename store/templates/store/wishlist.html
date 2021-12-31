@@ -1,0 +1,176 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+
+            <!-- admin-page start -->
+            <section class="admin-page-section d-flex align-items-center">
+                <div class="aps-wrapper w-100">
+                    <div class="container">
+                        <div class="row justify-content-center justify-content-md-start">
+                            <div class="admin-content-area">
+                                <div class="admin-thumb">
+                                    <img src="{% static 'images/admin/admin.jpg' %}" alt="">
+                                    <a href="#" class="image-change-option"><i class="fas fa-camera"></i></a>
+                                </div>
+                                <div class="admin-content">
+                                    <h4 class="name">{{customer.first_name}} {{customer.last_name}}</h4>
+                                    <p class="desc">Lorem Ipsum is simply dummy text.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- admin-page end -->
+
+
+
+            <!-- dashboard-section start -->
+            <section id="dashboard-nav" class="dashboard-section">
+                <div class="container">
+                    <ul class="dashbord-nav d-lg-flex flex-wrap align-items-center justify-content-between">
+                        <li><a href="user-dashbord.html#dashboard-nav"><i class="far fa-list-alt"></i>Your Orders</a></li>
+                        <li><a href="track-order.html#dashboard-nav"><i class="fas fa-shipping-fast"></i>Track Orders</a></li>
+                        <li><a href="profile.html#dashboard-nav"><i class="far fa-user"></i>Your Profile</a></li>
+                        <li><a class="active" href="wishlist.html#dashboard-nav"><i class="far fa-heart"></i>Wish List</a></li>
+                    </ul>
+                </div>
+
+                <div class="container">
+                    <div class="dashboard-body wishlist">
+                        <div class="wishlist-header">
+                            <h6>Shopping Wishlist</h6>
+                        </div>
+                        <div class="wish-list-container">
+                            {% for product in wishlist %}
+                            <div class="wishlist-item product-item d-flex align-items-center">
+                                <span  class="close-item "><i data-product="{{product.id}}"  class="mywishlist fas fa-times"></i></span>
+                                <div class="thumb">
+                                    <a><img    style="height: 10rem; min-height: 10rem; min-width: 5rem" src="{{product.imageURL}}" alt="products"></a>
+                                </div>
+                                <div class="product-content">
+                                    <a href="product-detail.html" class="product-title">{{product.name}}</a>
+                                    <div class="product-cart-info">
+                                        1x 31b
+                                    </div>
+                                    <div class="product-price">
+                                        <del>$8.00</del><span class="ml-4">{{product.price}} </span>
+                                    </div>
+                                  
+                  {% if product.quantity %}
+
+                  <div class="price-increase-decrese-group d-flex">
+                    <span class="decrease-btn">
+                      <button
+                        type="button"
+                        data-product="{{product.id}}"
+                        data-action="remove"
+                        class="btn quantity-left-minus update-cart"
+                        data-type="minus"
+                        data-field=""
+                        data-image_url="{{product.imageURL}}"
+                        data-price="{{product.price}}"
+                        data-name="{{product.name}}"
+                      >
+                        -
+                      </button>
+                    </span>
+                    <input
+                      type="text"
+                      name="quantity"
+                      class="form-controls input-number"
+                      value="{{product.quantity}}"
+                    />
+                    <span class="increase">
+                      <button
+                        type="button"
+                        class="btn quantity-right-plus update-cart"
+                        data-type="plus"
+                        data-product="{{product.id}}"
+                        data-image_url="{{product.imageURL}}"
+                        data-price="{{product.price}}"
+                        data-action="add"
+                        data-field=""
+                        data-name="{{product.name}}"
+                      >
+                        +
+                      </button>
+                    </span>
+                  </div>
+
+                  {% else %}
+
+                  <div class="cart-btn-toggle" onclick="cartopen()">
+                    <span
+                      data-product="{{product.id}}"
+                      data-action="add"
+                      data-image_url="{{product.imageURL}}"
+                      data-price="{{product.price}}"
+                      data-name="{{product.name}}"
+                      class="cart-btn update-cart"
+                      ><i class="fas fa-shopping-cart"></i> اضف</span
+                    >
+
+                    <div class="price-btn">
+                      <div class="price-increase-decrese-group d-flex">
+                        <span class="decrease-btn">
+                          <button
+                            data-product="{{product.id}}"
+                            data-action="remove"
+                            type="button"
+                            class="btn quantity-left-minus update-cart"
+                            data-type="minus"
+                            data-field=""
+                            data-image_url="{{product.imageURL}}"
+                            data-price="{{product.price}}"
+                            data-name="{{product.name}}"
+                          >
+                            -
+                          </button>
+                        </span>
+                        <input
+                          type="text"
+                          name="quantity"
+                          class="form-controls input-number"
+                          value="1"
+                        />
+                        <span class="increase">
+                          <button
+                            data-product="{{product.id}}"
+                            data-action="add"
+                            type="button"
+                            class="btn quantity-right-plus update-cart"
+                            data-type="plus"
+                            data-field=""
+                            data-image_url="{{product.imageURL}}"
+                            data-price="{{product.price}}"
+                            data-name="{{product.name}}"
+                          >
+                            +
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endif %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- dashboard-section end -->
+
+
+            {% endblock content %}
+
+
+

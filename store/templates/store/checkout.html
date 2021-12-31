@@ -1,0 +1,326 @@
+{% extends 'store/base.html' %} {% load static %} {% block content %}
+
+<!-- dashboard-section start -->
+<section class="dashboard-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div
+          class="
+            form-item
+            billing-item
+            bg-color-white
+            box-shadow
+            p-3 p-lg-5
+            border-radius5
+          "
+        >
+          <h6>معلومات الطلب</h6>
+          <form id="form"  class="billing-form"  onsubmit="return false;">
+            <div class="row">
+                <div  id = "user-info_1" class="  col-lg-6">
+                  <div class="input-item">
+                    <label>الاسم الأول</label>
+                    <input type="text"  name="first_name" />
+                  </div>
+                </div>
+                <div  id = "user-info_2" class=" col-lg-6">
+                  <div class="input-item">
+                    <label>اسم العائلة *</label>
+                    <input type="text" name="last_name" />
+                  </div>
+                </div>
+                <div id = "user-info_3" class=" col-lg-12">
+                  <div class="input-item">
+                    <label> رقم الهاتف* </label>
+                    <input type="text" name="phone" />
+                  </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="input-item">
+                  <label>المنطقة*</label>
+                  <div class="flux-custom-select">
+                    <select id="dropdown_1" >
+                      <option value="0">البيادر</option>
+                      <option value="1">ابو السوس</option>
+                      <option value="2">عراق الامير</option>
+                      <option value="3">الدوار السابع</option>
+                      <option value="4">الصويفية</option>
+                      <option value="5">خلدا</option>
+                      <option value="5">
+                        اخرى (سيتم تحديد رسوم التوصيل لاحقا)
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="input-item">
+                  <label> العنوان التفصيلي </label>
+                  <input type="text" name="address" />
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <button id="make-payment" class="place-order-btn">
+                تأكيد الطلب
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="
+            form-item
+            time-schedule
+            bg-color-white
+            box-shadow
+            p-3 p-lg-5
+            border-radius5
+          "
+        >
+          <h6>Delivery Schedule</h6>
+
+          <div class="time-schedule-container">
+            <p class="title">Express-Delivery</p>
+            <div class="time-schedule-box">
+              <ul>
+                <li>Monday</li>
+                <li>11/11/2021</li>
+                <li>8.00AM - 10.00AM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="
+            form-item
+            payment-item
+            bg-color-white
+            box-shadow
+            p-3 p-lg-5
+            border-radius5
+          "
+        >
+          <h6>Payment</h6>
+
+          <form  class="payment-form" method="post" >
+            <div class="input-item radio">
+              <input type="radio" name="payment"  value="check payment" />
+              <label>Check Payment</label>
+            </div>
+
+            <div class="input-item radio">
+              <input type="radio" name="payment" value="cash on delivary" />
+              <label>Cash on delivary</label>
+            </div>
+
+            <div class="input-item radio">
+              <input type="radio" name="payment" value="paypal" />
+              <label>Paypal</label>
+            </div>
+          </form>
+          <div class="payment-image">
+            <img src="assets/images/payment/01.png" alt="payment" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div
+          class="
+            cart-item
+            sitebar-cart
+            bg-color-white
+            box-shadow
+            p-3 p-lg-5
+            border-radius5
+          "
+        >
+          <div class="cart-product-container">
+            {% for item in items %}
+
+            <div class="cart-product-item">
+              <div class="row align-items-center">
+                <div class="col-6 p-0">
+                  <div class="thumb">
+                    <a onclick="openModal()"
+                      ><img
+                        style="
+                          height: 10rem;
+                          min-height: 10rem;
+                          min-width: 5rem;
+                        "
+                        src="{{item.product.imageURL}}"
+                        alt="products"
+                    /></a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="product-content">
+                    <a onclick="openModal()" class="product-title"
+                      >{{item.product.name}}</a
+                    >
+                    <div class="product-cart-info">
+                      {{item.product.price}}x {{item.quantity}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <div class="price-increase-decrese-group d-flex">
+                    <span class="decrease-btn">
+                      <button
+                        type="button"
+                        data-product="{{item.product.id}}"
+                        data-action="remove"
+                        class="update-cart btn quantity-left-minus"
+                        data-type="minus"
+                        data-field=""
+                      >
+                        -
+                      </button>
+                    </span>
+                    <input
+                      type="text"
+                      name="quantity"
+                      class="form-controls input-number"
+                      value="{{item.quantity}}"
+                    />
+                    <span class="increase">
+                      <button
+                        type="button"
+                        class="update-cart btn quantity-right-plus"
+                        data-product="{{item.product.id}}"
+                        data-action="add"
+                        data-type="plus"
+                        data-field=""
+                      >
+                        +
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="product-price">
+                    <del>$8.00</del
+                    ><span class="ml-4"
+                      >{{item.product.price|floatformat:2}} د</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="cart-footer">
+            <div class="cart-total">
+              <p class="d-flex justify-content-between">
+                <span>Delevery charge</span>
+                <span>3 د</span>
+              </p>
+              <a href="#">Do you have a voucher?</a>
+            </div>
+
+            <div class="cart-total">
+              <p class="saving d-flex justify-content-between">
+                <span>Total Savings</span>
+                <span>$11.00</span>
+              </p>
+              <p class="total-price d-flex justify-content-between">
+                <span>Total</span>
+                <span>{{order.get_cart_total|floatformat:2}} د</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- dashboard-section end -->
+
+<script type="text/javascript">
+  var total = '{{order.get_cart_total|floatformat:2}}'
+
+  
+  if (user != "AnonymousUser") {
+    document.getElementById("user-info_1").innerHTML = "";
+    document.getElementById("user-info_2").innerHTML = "";
+    document.getElementById("user-info_3").innerHTML = "";
+
+  }
+
+  document
+    .getElementById("make-payment")
+    .addEventListener("click", function (e) {
+      submitFormData();
+    });
+
+  function submitFormData() {
+    console.log("Payment button clicked");
+  }
+
+  function submitFormData(){
+	    	console.log('Payment button clicked')
+
+
+	    	var userFormData = {
+				'first_name':null,
+        'last_name':null,
+				'phone':null,
+				'total':total,
+			}
+
+			var shippingInfo = {
+				'address':null,
+				'state':"البيادر",
+
+			}
+
+			{
+	    		shippingInfo.address = form.address.value
+		    	shippingInfo.state = "form.state.value"
+	    	}
+
+	    	if (user == 'AnonymousUser'){
+	    		userFormData.first_name = form.first_name.value
+                userFormData.last_name = form.last_name.value
+	    		userFormData.phone = form.phone.value
+          phone =  form.phone.value
+	    	} else{
+          phone = "{{customer.phone}}"
+        }
+        
+
+	    	console.log('Shipping Info:', shippingInfo)
+	    	console.log('User Info:', userFormData)
+
+            
+	    	var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	.then((response) => response.json())
+	    	.then((data) => {
+				  console.log('Success:', data);
+          cart = {}
+          
+          document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+				  window.location.href = "{% url 'order-success' phone=55 %}".replace('55', phone);
+
+				})
+	    }
+
+
+	    
+	</script>
+{% endblock content %}

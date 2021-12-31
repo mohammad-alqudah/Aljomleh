@@ -1,0 +1,48 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+            <!-- Product order success section start -->
+            <section class="product-order-success-section section-ptb">
+                <div class="container">
+                    <div class="product-order-success-container">
+                        <div class="product-order-success">
+                            <div class="iconimage">
+                                <img src="{% static 'images/checkicon.png' %}" alt="icon">
+                            </div>
+                            <h2>لقد تم استلام طلبك بنجاح .</h2>
+                            <p>شكراً لطلبك من الجملة </p>
+                            <a href="#" class="order-btn">عرض تفاصيل الطلب</a>
+                        </div>
+                        <div class="order-description">
+                            <ul class="order-info">
+                                <li>
+                                    <h6>رقم الطلب</h6>
+                                    <span>:</span>
+                                    <p>Order#{{order.transaction_id}}</p>
+                                </li>
+                                <li>
+                                    <h6>تاريخ الطلب </h6>
+                                    <span>:</span>
+                                    <p>{{order.date_ordered}}</p>
+                                </li>
+                                <li>
+                                    <h6>القيمة :</h6>
+                                    <span>:</span>
+                                    <p>د {{order.get_cart_total}}</p>
+                                </li>
+                            </ul>
+                            <a href="#" class="view-summery">عرض </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Product order success section end -->
+
+
+
+            {% endblock content %}

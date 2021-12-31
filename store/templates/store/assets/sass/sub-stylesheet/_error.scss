@@ -1,0 +1,45 @@
+
+.error-page {
+    padding-top: calc(60px + 5.20vw);
+    padding-bottom: calc(60px + 5.20vw);
+    h1 {
+        font-size: calc(100px + 5.20vw);
+        color: $theme-color;
+        line-height: calc(90px + 5.20vw);
+        // @media #{$laptop-device}{
+        //     line-height: 11.19vw;
+        // }
+    }
+    h3 {
+        font-size: calc(22px + 0.52vw);
+        color: #222533;
+    }
+    p {
+        font-size: calc(15px + 0.20vw);
+        color: #222533;
+        margin-bottom: 30px;
+    }
+    .backhome {
+        font-size: 14px;
+        width: 180px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: $theme-color;
+        color: white;
+        display: inline-block;
+        border-radius: 4px;
+        text-align: center;
+        transition: all 0.3s ease;
+        @media #{$laptop-device}{
+            font-size: 16px;
+            width: 240px;
+            height: 60px;
+            line-height: 60px;
+        }
+        &:hover {
+            background-color: #222533;
+        }
+    }
+}

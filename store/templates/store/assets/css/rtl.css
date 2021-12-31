@@ -1,0 +1,414 @@
+.all-catagory-option > a i {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.page-layout .catagory-sidebar-area {
+    left: unset;
+    right: -350px;
+}
+.page-layout .catagory-sidebar-area.fixed-totop {
+    left: unset;
+    right: -350px
+}
+.page-layout.open-side-menu .catagory-sidebar-area.fixed-totop {
+    right: 0;
+    left: unset;
+}
+.page-layout.open-side-menu .catagory-sidebar-area {
+    left: unset;
+    right: 0;
+}
+.catagory-sidebar.all-catagory-option .catagory-submenu .catagory-submenu {
+    padding-right: 50px;
+    padding-left: 0px;
+}
+.catagory-sidebar.all-catagory-option .catagory-submenu .catagory-submenu:after {
+    right: 50px;
+    left: unset;
+}
+.catagory-sidebar.all-catagory-option .catagory-submenu li a i {
+    transform: rotate(90deg);
+}
+.select-search-option .search-form .submit-btn {
+    left: 0;
+    right: unset;
+}
+.select-search-option .search-form input {
+    padding-left: 60px;
+}
+.select-search-option .flux-custom-select .select-selected {
+    text-align: right;
+}
+.select-search-option .flux-custom-select .select-items {
+    text-align: right;
+}
+.select-selected:after {
+    right: unset;
+    left: 10px;
+}
+.banner-content {
+    text-align: right;
+}
+.site-action .site-phone i, .site-action .site-help i {
+    color: #222533;
+    margin-left: 0px;
+    margin-left: 3px;
+    transition: all 0.3s ease;
+}
+.sitebar-cart.open-cart {
+    right: unset;
+    left: 0;
+}
+.sitebar-cart {
+    right: unset;
+    left: -350px;
+}
+.sitebar-drawar {
+    right: unset;
+    left: 0;
+}
+.sitebar-drawar.hide-drawer {
+    right: unset;
+    left: -145px;
+}
+.sitebar-cart .sc-head .cart-count span {
+    margin-left: 0px;
+    margin-right: 6px;
+    margin-top: 6px;
+}
+.sitebar-drawar .cart-count span {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.sitebar-cart .cart-product-item .close-item {
+    right: unset;
+    left: 10px;
+}
+.cart-product-item .product-content {
+    text-align: right;
+}
+.section-heading {
+    text-align: right;
+}
+.section-heading .heading-title {
+    padding-right: 0px;
+    padding-left: 25px;
+}
+.slider-btn-group {
+    right: unset;
+    left: 0;
+}
+.slider-btn-group .slider-btn-next svg{
+    transform: rotate(180deg);
+} 
+.slider-btn-group .slider-btn-prev svg{
+    transform: rotate(180deg);
+}
+.menu li.item-has-children .submenu li a {
+    text-align: right;
+}
+.menu li.item-has-children .submenu{
+    left: unset;
+    right: 0;
+}
+.footer-widget {
+    text-align: right;
+}
+.product-item .product-content {
+    text-align: right;
+}
+.newsletter-form input {
+    width: 100%;
+    padding: 14px 20px 13px 60px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+.newsletter-form .submit-btn {
+    right: unset;
+    left: 10px;
+}
+.newsletter-form .submit-btn svg {
+    transform: rotate(180deg)
+}
+.newsletter-heading h5 {
+    text-align: right;
+}
+p.copyright {
+    text-align: right;
+}
+.meta-post li {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 0px;
+}
+.post-item .post-content {
+    text-align: right;
+}
+.banner-search .select-selected:after {
+    right: unset;
+    left: 18px;
+}
+.menu-item-iconic li .side-mega-menu {
+    right: 100%;
+    left: unset;
+}
+.menu-item-iconic li a {
+    text-align: right;
+}
+.menu-item-iconic li a i {
+    right: unset;
+    left: 20px;
+    transform: rotate(90deg);
+}
+.menu-item-iconic li a img{
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.about-content {
+    text-align: right;
+}
+.blog-sidebar .search-form i {
+    right: unset;
+    left: 15px;
+    margin-top: -6px;
+}
+.blog-sidebar .small-post-list .post-item .post-content {
+    padding: 0 10px 0 0px;
+}
+.blog-sidebar .tag-list {
+    text-align: right;
+}
+.blog-sidebar .tag-list li a{
+    margin-right: 0px;
+    margin-left: 8px;
+}
+.entry-content {
+    text-align: right;
+}
+.share-list {
+    text-align: right;
+}
+.comment-item .comment-content {
+    text-align: right;
+}
+.response-commen-title {
+    text-align: right;
+}
+.respons-contact-form .form-item i {
+    right: unset;
+    left: 20px;
+}
+.right-nav-menu li a .icon {
+    margin-right: 0px;
+    margin-left: 7px;
+}
+.brand-page-header-section .brand-content-item .content {
+    padding-left: 0px;
+    padding-right: 30px;
+    text-align: right;
+}
+.dashboard-body .profile-address-book .address-list li .edit-delete-btn {
+    right: unset;
+    left: 15px;
+}
+.order-card .order-card-body .order-info-extra .review {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+.wishlist-item .close-item {
+    right: unset;
+    left: 30px;
+}
+.faq .faq-header .btn-link {
+    padding: 20px 80px 22px 50px;
+    text-align: right;
+}
+.faq .faq-header .btn-link .icon {
+    right: 30px;
+    left: unset;
+}
+.product-details-content .wish-link {
+    left: 15px;
+    right: unset;
+}
+.description-review-topbar a {
+    margin: 0 0px 0px 90px;
+}
+.sidebar .checkbox-item {
+    text-align: right;
+}
+.billing-form .input-item {
+    text-align: right;
+}
+.form-item h6 {
+    text-align: right;
+}
+.contact-number-item p {
+    text-align: right;
+}
+form.send-code-form {
+    text-align: right;
+}
+form.varify-code-form {
+    text-align: right;
+}
+.review-comment-item .content {
+    padding-left: 0;
+    padding-right: 20px;
+    text-align: right;
+}
+.wishlist-header,
+.track-order-footer,
+.delevary-time,
+.track-order-head,
+.payment-image,
+.input-item.radio,
+.ctagory-item,
+.header-top .logo,
+.all-catagory-option,
+.order-head,
+.rewards,
+.wallet-item,
+.new-customer-container,
+.eflux-login-form .input-item,
+.address-edit-box .address-form .input-item,
+.product-order-success-container .order-description .order-info,
+.sidebar .widget-wrapper .flux-custom-select .select-selected,
+.review-form .input-item,
+.product-description-wrapper,
+.product-details-content,
+.faq .faq-body p,
+.order-card.show .order-info-extra,
+.profile-address-book,
+.admin-content-area,
+.my-account-box,
+.contact-info {
+    text-align: right;
+}
+.place-order-btn {
+    margin-top: 10px;
+}
+
+.dashboard-body .profile .list-profile-info li .desc {
+    padding-left: 0px;
+    padding-right: 50px;
+}
+.section-heading .heading-circle {
+    margin-right: 0px;
+    margin-left: 8px;
+}
+.comment-item .comment-author .author-name-info {
+    width: calc(100% - 60px);
+    padding-right: 15px;
+    padding-left: 0px;
+    position: relative;
+    text-align: right;
+}
+.comment-item .comment-item:after {
+    left: unset;
+    right: 0;
+}
+.menu li.item-has-mega-menu .mega-menu-container {
+    max-width: 100%;
+}
+.contact-number-item .varify-code-form input,
+.contact-number-item .send-code-form input{
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.input-item.radio label{
+    padding-left: 0px;
+    padding-right: 20px;
+}
+.input-item.radio label:after,
+.input-item.radio label:before{
+    left: unset;
+    right: 0;
+}
+.catagory-sidebar.all-catagory-option .catagory-submenu li .icon {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+@media only screen and (min-width: 768px){
+    .comment-item .comment-author .author-name-info {
+        padding-right: 30px;
+        padding-left: 100px;
+        text-align: right;
+    }
+    .comment-item .comment-author .author-name-info .reply-btn {
+        position: absolute;
+        right: unset;
+        top: 50%;
+        margin-top: -13px;
+        left: 20px;
+    }
+    
+}
+
+
+
+
+@media only screen and (min-width: 1200px){
+    .page-layout.open-side-menu {
+        padding-left: 0px;
+        padding-right: 250px;
+    }
+    .menu li:first-child a {
+        padding-left: unset;
+        padding-right: 0px;
+    }
+}
+@media only screen and (min-width: 1300px){
+    .page-layout.open-side-menu {
+        padding-left: 0px;
+        padding-right: 250px;
+    }
+}
+@media only screen and (min-width: 1500px){
+    .page-layout.open-side-menu {
+        padding-left: 0px;
+        padding-right: 350px;
+    }
+    .page-layout.open-side-menu .container {
+        margin-left: unset;
+        margin-right: 80px;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .dashboard-section .right-nav-menu {
+        left: unset;
+        right: -250px;
+        width: 250px;
+        top: 0;
+    }
+    .dashboard-section .right-nav-menu .right-nav-menu-toggle {
+        right: unset;
+        left: -35px;
+    }
+    .dashboard-section .right-nav-menu.open {
+        right: -10px;
+    }
+    .banner-slider-container .swiper-slide .banner-content-area .slider-image{
+        opacity: 0.5;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 767px){
+    .description-review-topbar a {
+        margin: 0 0px 0px 10px;
+    }
+}
+.dashboard-section .col-lg-3 {
+    position: initial;
+}
+
+@media only screen and (max-width: 1200px){
+    .banner-section.bg-img4 {
+        background-position: 66% 1%;
+    }
+}
